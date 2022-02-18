@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Notes Lists-->
         <scene sceneID="d0X-6K-1bW">
             <objects>
                 <tableViewController id="GsV-IA-kDL" customClass="NotesListsViewController" customModule="MyNotesApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,8 +50,9 @@
                             <outlet property="delegate" destination="GsV-IA-kDL" id="irU-h1-hcv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Eul-9m-EE1">
+                    <navigationItem key="navigationItem" title="Notes Lists" id="Eul-9m-EE1">
                         <barButtonItem key="rightBarButtonItem" image="plus.rectangle.on.folder.fill" catalog="system" id="Z78-8w-cDD">
+                            <color key="tintColor" red="1" green="0.54772175980000004" blue="0.4603397508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addNewNotesList:" destination="GsV-IA-kDL" id="4fK-wB-VjZ"/>
                             </connections>
@@ -103,6 +104,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="52f-Ds-XVM">
                         <barButtonItem key="rightBarButtonItem" image="plus.square.fill.on.square.fill" catalog="system" id="3Ku-xL-bQF">
+                            <color key="tintColor" red="1" green="0.54772175980000004" blue="0.4603397508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="Mg5-Qi-UF6" kind="show" identifier="new" id="dRi-At-CXw"/>
                             </connections>
@@ -116,7 +118,7 @@
             </objects>
             <point key="canvasLocation" x="1238" y="82"/>
         </scene>
-        <!--Note Detail View Controller-->
+        <!--My Note-->
         <scene sceneID="we4-7u-xYS">
             <objects>
                 <viewController id="Mg5-Qi-UF6" customClass="NoteDetailViewController" customModule="MyNotesApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,13 +127,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rNd-Lk-zeU">
-                                <rect key="frame" x="16" y="104" width="382" height="34"/>
+                                <rect key="frame" x="16" y="156" width="382" height="34"/>
                                 <color key="backgroundColor" red="0.96386228760000003" green="0.94503412959999999" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wAA-Lb-8pe">
-                                <rect key="frame" x="16" y="154" width="382" height="679"/>
+                                <rect key="frame" x="16" y="206" width="382" height="627"/>
                                 <color key="backgroundColor" red="0.96386228760000003" green="0.94503412959999999" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -150,8 +152,9 @@
                             <constraint firstItem="59Z-93-kpu" firstAttribute="bottom" secondItem="wAA-Lb-8pe" secondAttribute="bottom" constant="29" id="zId-vq-ROZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="drW-uB-9rY">
+                    <navigationItem key="navigationItem" title="My Note" id="drW-uB-9rY">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="sGt-LU-z9w">
+                            <color key="tintColor" red="1" green="0.54772175980000004" blue="0.4603397508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="doneButtonPressed:" destination="Mg5-Qi-UF6" id="Vfd-FS-nvH"/>
                             </connections>
@@ -170,9 +173,17 @@
         <scene sceneID="CK0-yK-ZEK">
             <objects>
                 <navigationController id="r3X-VG-GMp" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nTX-5e-cWI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="nTX-5e-cWI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.54772175980000004" blue="0.4603397508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.54772175980000004" blue="0.4603397508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.54772175980000004" blue="0.4603397508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="0.54772175980000004" blue="0.4603397508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="GsV-IA-kDL" kind="relationship" relationship="rootViewController" id="Ra1-ba-c4o"/>
